@@ -10,6 +10,9 @@ class Calculator{
     }
     
     public void divide(){
+    	if(this.right == 0){
+            throw new ArithmeticException("0으로 나누는 것은 허용되지 않습니다.");
+        }
     	try { //try 안에는 예외 상황이 발생할 것으로 예상되는 로직을 위치시킴
     		System.out.print("계산결과는 ");
     		//오류가 발생하면서 try 내의 실행이 중단되고 catch 구문 안의 내용이 실행
@@ -48,4 +51,10 @@ class Calculator{
  * 예외가 발생했다고 데이터베이스 접속을 끊지 않으면 데이터베이스와 연결 상태를 유지하게 되고
  * 데이터베이스는 더 이상 접속을 수용할 수 없는 상태에 빠질 수 있음
  * 접속을 끊는 작업은 예외 발생여부와 상관없기 때문에 finally에서 처리하기에 좋은 작업
+ 
+ * IllegalArgumentException	: 매개변수가 의도하지 않은 상황을 유발시킬 때
+ * IllegalStateException : 메소드를 호출하기 위한 상태가 아닐 때
+ * NullPointerException	: 매개 변수 값이 null 일 때
+ * IndexOutOfBoundsException : 인덱스 매개 변수 값이 범위를 벗어날 때
+ * ArithmeticException : 산술적인 연산에 오류가 있을 때
  */
